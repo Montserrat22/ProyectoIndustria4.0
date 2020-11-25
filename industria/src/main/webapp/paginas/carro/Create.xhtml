@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCarroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCarroLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{carroController.selected.id}" title="#{bundle.CreateCarroTitle_id}" required="true" requiredMessage="#{bundle.CreateCarroRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateCarroLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{carroController.selected.nombre}" title="#{bundle.CreateCarroTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateCarroLabel_anio}" for="anio" />
+                    <h:inputText id="anio" value="#{carroController.selected.anio}" title="#{bundle.CreateCarroTitle_anio}" />
+                    <h:outputLabel value="#{bundle.CreateCarroLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{carroController.selected.status}" title="#{bundle.CreateCarroTitle_status}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{carroController.create}" value="#{bundle.CreateCarroSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{carroController.prepareList}" value="#{bundle.CreateCarroShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCarroIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

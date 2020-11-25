@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProcesosieteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_id}"/>
+                    <h:outputText value="#{procesosieteController.selected.id}" title="#{bundle.ViewProcesosieteTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_rpm}"/>
+                    <h:outputText value="#{procesosieteController.selected.rpm}" title="#{bundle.ViewProcesosieteTitle_rpm}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_calidad}"/>
+                    <h:outputText value="#{procesosieteController.selected.calidad}" title="#{bundle.ViewProcesosieteTitle_calidad}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_hora}"/>
+                    <h:outputText value="#{procesosieteController.selected.hora}" title="#{bundle.ViewProcesosieteTitle_hora}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_fecha}"/>
+                    <h:outputText value="#{procesosieteController.selected.fecha}" title="#{bundle.ViewProcesosieteTitle_fecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_statusproceso}"/>
+                    <h:outputText value="#{procesosieteController.selected.statusproceso}" title="#{bundle.ViewProcesosieteTitle_statusproceso}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_idCarro}"/>
+                    <h:outputText value="#{procesosieteController.selected.idCarro}" title="#{bundle.ViewProcesosieteTitle_idCarro}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_idInventario}"/>
+                    <h:outputText value="#{procesosieteController.selected.idInventario}" title="#{bundle.ViewProcesosieteTitle_idInventario}"/>
+                    <h:outputText value="#{bundle.ViewProcesosieteLabel_idSolicitud}"/>
+                    <h:outputText value="#{procesosieteController.selected.idSolicitud}" title="#{bundle.ViewProcesosieteTitle_idSolicitud}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{procesosieteController.destroyAndView}" value="#{bundle.ViewProcesosieteDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewProcesosieteEditLink}"/>
+                <br />
+                <h:commandLink action="#{procesosieteController.prepareCreate}" value="#{bundle.ViewProcesosieteCreateLink}" />
+                <br />
+                <h:commandLink action="#{procesosieteController.prepareList}" value="#{bundle.ViewProcesosieteShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewProcesosieteIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProcesoochoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_id}"/>
+                    <h:outputText value="#{procesoochoController.selected.id}" title="#{bundle.ViewProcesoochoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_fechainspeccion}"/>
+                    <h:outputText value="#{procesoochoController.selected.fechainspeccion}" title="#{bundle.ViewProcesoochoTitle_fechainspeccion}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_statusproceso}"/>
+                    <h:outputText value="#{procesoochoController.selected.statusproceso}" title="#{bundle.ViewProcesoochoTitle_statusproceso}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_idCarro}"/>
+                    <h:outputText value="#{procesoochoController.selected.idCarro}" title="#{bundle.ViewProcesoochoTitle_idCarro}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rcarroceria}"/>
+                    <h:outputText value="#{procesoochoController.selected.rcarroceria}" title="#{bundle.ViewProcesoochoTitle_rcarroceria}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rinteriores}"/>
+                    <h:outputText value="#{procesoochoController.selected.rinteriores}" title="#{bundle.ViewProcesoochoTitle_rinteriores}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rllantas}"/>
+                    <h:outputText value="#{procesoochoController.selected.rllantas}" title="#{bundle.ViewProcesoochoTitle_rllantas}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rmotor}"/>
+                    <h:outputText value="#{procesoochoController.selected.rmotor}" title="#{bundle.ViewProcesoochoTitle_rmotor}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rpintura}"/>
+                    <h:outputText value="#{procesoochoController.selected.rpintura}" title="#{bundle.ViewProcesoochoTitle_rpintura}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rpuertas}"/>
+                    <h:outputText value="#{procesoochoController.selected.rpuertas}" title="#{bundle.ViewProcesoochoTitle_rpuertas}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_rrendimiento}"/>
+                    <h:outputText value="#{procesoochoController.selected.rrendimiento}" title="#{bundle.ViewProcesoochoTitle_rrendimiento}"/>
+                    <h:outputText value="#{bundle.ViewProcesoochoLabel_idSolicitud}"/>
+                    <h:outputText value="#{procesoochoController.selected.idSolicitud}" title="#{bundle.ViewProcesoochoTitle_idSolicitud}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{procesoochoController.destroyAndView}" value="#{bundle.ViewProcesoochoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewProcesoochoEditLink}"/>
+                <br />
+                <h:commandLink action="#{procesoochoController.prepareCreate}" value="#{bundle.ViewProcesoochoCreateLink}" />
+                <br />
+                <h:commandLink action="#{procesoochoController.prepareList}" value="#{bundle.ViewProcesoochoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewProcesoochoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

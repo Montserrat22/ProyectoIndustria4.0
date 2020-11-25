@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListInteriorfrenoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListInteriorfrenoEmpty}" rendered="#{interiorfrenoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{interiorfrenoController.items.rowCount > 0}">
+                    <h:outputText value="#{interiorfrenoController.pagination.pageFirstItem + 1}..#{interiorfrenoController.pagination.pageLastItem + 1}/#{interiorfrenoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{interiorfrenoController.previous}" value="#{bundle.Previous} #{interiorfrenoController.pagination.pageSize}" rendered="#{interiorfrenoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{interiorfrenoController.next}" value="#{bundle.Next} #{interiorfrenoController.pagination.pageSize}" rendered="#{interiorfrenoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{interiorfrenoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInteriorfrenoTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInteriorfrenoTitle_statusinterior}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.statusinterior}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInteriorfrenoTitle_idInventario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idInventario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{interiorfrenoController.prepareView}" value="#{bundle.ListInteriorfrenoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{interiorfrenoController.prepareEdit}" value="#{bundle.ListInteriorfrenoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{interiorfrenoController.destroy}" value="#{bundle.ListInteriorfrenoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{interiorfrenoController.prepareCreate}" value="#{bundle.ListInteriorfrenoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListInteriorfrenoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

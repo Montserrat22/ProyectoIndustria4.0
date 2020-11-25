@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRevisionpuertasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRevisionpuertasLabel_id}"/>
+                    <h:outputText value="#{revisionpuertasController.selected.id}" title="#{bundle.ViewRevisionpuertasTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpuertasLabel_numpuertas}"/>
+                    <h:outputText value="#{revisionpuertasController.selected.numpuertas}" title="#{bundle.ViewRevisionpuertasTitle_numpuertas}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpuertasLabel_alineadas}"/>
+                    <h:outputText value="#{revisionpuertasController.selected.alineadas}" title="#{bundle.ViewRevisionpuertasTitle_alineadas}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpuertasLabel_statusrevision}"/>
+                    <h:outputText value="#{revisionpuertasController.selected.statusrevision}" title="#{bundle.ViewRevisionpuertasTitle_statusrevision}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisionpuertasController.destroyAndView}" value="#{bundle.ViewRevisionpuertasDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRevisionpuertasEditLink}"/>
+                <br />
+                <h:commandLink action="#{revisionpuertasController.prepareCreate}" value="#{bundle.ViewRevisionpuertasCreateLink}" />
+                <br />
+                <h:commandLink action="#{revisionpuertasController.prepareList}" value="#{bundle.ViewRevisionpuertasShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRevisionpuertasIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

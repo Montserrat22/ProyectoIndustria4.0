@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRevisioninterioresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_id}"/>
+                    <h:outputText value="#{revisioninterioresController.selected.id}" title="#{bundle.ViewRevisioninterioresTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_freno}"/>
+                    <h:outputText value="#{revisioninterioresController.selected.freno}" title="#{bundle.ViewRevisioninterioresTitle_freno}"/>
+                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_volante}"/>
+                    <h:outputText value="#{revisioninterioresController.selected.volante}" title="#{bundle.ViewRevisioninterioresTitle_volante}"/>
+                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_asiento}"/>
+                    <h:outputText value="#{revisioninterioresController.selected.asiento}" title="#{bundle.ViewRevisioninterioresTitle_asiento}"/>
+                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_statusrevision}"/>
+                    <h:outputText value="#{revisioninterioresController.selected.statusrevision}" title="#{bundle.ViewRevisioninterioresTitle_statusrevision}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisioninterioresController.destroyAndView}" value="#{bundle.ViewRevisioninterioresDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRevisioninterioresEditLink}"/>
+                <br />
+                <h:commandLink action="#{revisioninterioresController.prepareCreate}" value="#{bundle.ViewRevisioninterioresCreateLink}" />
+                <br />
+                <h:commandLink action="#{revisioninterioresController.prepareList}" value="#{bundle.ViewRevisioninterioresShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRevisioninterioresIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

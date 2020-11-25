@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewInteriorasientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_id}"/>
+                    <h:outputText value="#{interiorasientoController.selected.id}" title="#{bundle.ViewInteriorasientoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_statusinterior}"/>
+                    <h:outputText value="#{interiorasientoController.selected.statusinterior}" title="#{bundle.ViewInteriorasientoTitle_statusinterior}"/>
+                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_idInventario}"/>
+                    <h:outputText value="#{interiorasientoController.selected.idInventario}" title="#{bundle.ViewInteriorasientoTitle_idInventario}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{interiorasientoController.destroyAndView}" value="#{bundle.ViewInteriorasientoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewInteriorasientoEditLink}"/>
+                <br />
+                <h:commandLink action="#{interiorasientoController.prepareCreate}" value="#{bundle.ViewInteriorasientoCreateLink}" />
+                <br />
+                <h:commandLink action="#{interiorasientoController.prepareList}" value="#{bundle.ViewInteriorasientoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewInteriorasientoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

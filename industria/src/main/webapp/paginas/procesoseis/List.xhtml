@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListProcesoseisTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListProcesoseisEmpty}" rendered="#{procesoseisController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{procesoseisController.items.rowCount > 0}">
+                    <h:outputText value="#{procesoseisController.pagination.pageFirstItem + 1}..#{procesoseisController.pagination.pageLastItem + 1}/#{procesoseisController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{procesoseisController.previous}" value="#{bundle.Previous} #{procesoseisController.pagination.pageSize}" rendered="#{procesoseisController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{procesoseisController.next}" value="#{bundle.Next} #{procesoseisController.pagination.pageSize}" rendered="#{procesoseisController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{procesoseisController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_hora}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hora}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_fecha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fecha}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_statusproceso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.statusproceso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_idCarro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idCarro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_iasiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.iasiento}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_ifreno}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ifreno}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_ivolante}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ivolante}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProcesoseisTitle_idSolicitud}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idSolicitud}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{procesoseisController.prepareView}" value="#{bundle.ListProcesoseisViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{procesoseisController.prepareEdit}" value="#{bundle.ListProcesoseisEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{procesoseisController.destroy}" value="#{bundle.ListProcesoseisDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{procesoseisController.prepareCreate}" value="#{bundle.ListProcesoseisCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListProcesoseisIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

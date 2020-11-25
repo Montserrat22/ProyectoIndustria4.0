@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProcesosieteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{procesosieteController.selected.id}" title="#{bundle.CreateProcesosieteTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesosieteRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_rpm}" for="rpm" />
+                    <h:inputText id="rpm" value="#{procesosieteController.selected.rpm}" title="#{bundle.CreateProcesosieteTitle_rpm}" />
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_calidad}" for="calidad" />
+                    <h:inputText id="calidad" value="#{procesosieteController.selected.calidad}" title="#{bundle.CreateProcesosieteTitle_calidad}" />
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_hora}" for="hora" />
+                    <h:inputText id="hora" value="#{procesosieteController.selected.hora}" title="#{bundle.CreateProcesosieteTitle_hora}" />
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{procesosieteController.selected.fecha}" title="#{bundle.CreateProcesosieteTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_statusproceso}" for="statusproceso" />
+                    <h:inputText id="statusproceso" value="#{procesosieteController.selected.statusproceso}" title="#{bundle.CreateProcesosieteTitle_statusproceso}" />
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_idCarro}" for="idCarro" />
+                    <h:selectOneMenu id="idCarro" value="#{procesosieteController.selected.idCarro}" title="#{bundle.CreateProcesosieteTitle_idCarro}" >
+                        <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_idInventario}" for="idInventario" />
+                    <h:selectOneMenu id="idInventario" value="#{procesosieteController.selected.idInventario}" title="#{bundle.CreateProcesosieteTitle_idInventario}" >
+                        <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesosieteLabel_idSolicitud}" for="idSolicitud" />
+                    <h:selectOneMenu id="idSolicitud" value="#{procesosieteController.selected.idSolicitud}" title="#{bundle.CreateProcesosieteTitle_idSolicitud}" >
+                        <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{procesosieteController.create}" value="#{bundle.CreateProcesosieteSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{procesosieteController.prepareList}" value="#{bundle.CreateProcesosieteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProcesosieteIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

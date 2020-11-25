@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProcesoochoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{procesoochoController.selected.id}" title="#{bundle.EditProcesoochoTitle_id}" required="true" requiredMessage="#{bundle.EditProcesoochoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_fechainspeccion}" for="fechainspeccion" />
+                    <h:inputText id="fechainspeccion" value="#{procesoochoController.selected.fechainspeccion}" title="#{bundle.EditProcesoochoTitle_fechainspeccion}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_statusproceso}" for="statusproceso" />
+                    <h:inputText id="statusproceso" value="#{procesoochoController.selected.statusproceso}" title="#{bundle.EditProcesoochoTitle_statusproceso}" />
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_idCarro}" for="idCarro" />
+                    <h:selectOneMenu id="idCarro" value="#{procesoochoController.selected.idCarro}" title="#{bundle.EditProcesoochoTitle_idCarro}" >
+                        <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rcarroceria}" for="rcarroceria" />
+                    <h:selectOneMenu id="rcarroceria" value="#{procesoochoController.selected.rcarroceria}" title="#{bundle.EditProcesoochoTitle_rcarroceria}" >
+                        <f:selectItems value="#{revisioncarroceriaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rinteriores}" for="rinteriores" />
+                    <h:selectOneMenu id="rinteriores" value="#{procesoochoController.selected.rinteriores}" title="#{bundle.EditProcesoochoTitle_rinteriores}" >
+                        <f:selectItems value="#{revisioninterioresController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rllantas}" for="rllantas" />
+                    <h:selectOneMenu id="rllantas" value="#{procesoochoController.selected.rllantas}" title="#{bundle.EditProcesoochoTitle_rllantas}" >
+                        <f:selectItems value="#{revisionllantasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rmotor}" for="rmotor" />
+                    <h:selectOneMenu id="rmotor" value="#{procesoochoController.selected.rmotor}" title="#{bundle.EditProcesoochoTitle_rmotor}" >
+                        <f:selectItems value="#{revisionmotorController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rpintura}" for="rpintura" />
+                    <h:selectOneMenu id="rpintura" value="#{procesoochoController.selected.rpintura}" title="#{bundle.EditProcesoochoTitle_rpintura}" >
+                        <f:selectItems value="#{revisionpinturaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rpuertas}" for="rpuertas" />
+                    <h:selectOneMenu id="rpuertas" value="#{procesoochoController.selected.rpuertas}" title="#{bundle.EditProcesoochoTitle_rpuertas}" >
+                        <f:selectItems value="#{revisionpuertasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_rrendimiento}" for="rrendimiento" />
+                    <h:selectOneMenu id="rrendimiento" value="#{procesoochoController.selected.rrendimiento}" title="#{bundle.EditProcesoochoTitle_rrendimiento}" >
+                        <f:selectItems value="#{revisionrendimientoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesoochoLabel_idSolicitud}" for="idSolicitud" />
+                    <h:selectOneMenu id="idSolicitud" value="#{procesoochoController.selected.idSolicitud}" title="#{bundle.EditProcesoochoTitle_idSolicitud}" >
+                        <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{procesoochoController.update}" value="#{bundle.EditProcesoochoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditProcesoochoViewLink}"/>
+                <br />
+                <h:commandLink action="#{procesoochoController.prepareList}" value="#{bundle.EditProcesoochoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditProcesoochoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRevisionllantasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{revisionllantasController.selected.id}" title="#{bundle.CreateRevisionllantasTitle_id}" required="true" requiredMessage="#{bundle.CreateRevisionllantasRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_numllantas}" for="numllantas" />
+                    <h:inputText id="numllantas" value="#{revisionllantasController.selected.numllantas}" title="#{bundle.CreateRevisionllantasTitle_numllantas}" />
+                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_llantasnuevas}" for="llantasnuevas" />
+                    <h:inputText id="llantasnuevas" value="#{revisionllantasController.selected.llantasnuevas}" title="#{bundle.CreateRevisionllantasTitle_llantasnuevas}" />
+                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_statusrevision}" for="statusrevision" />
+                    <h:inputText id="statusrevision" value="#{revisionllantasController.selected.statusrevision}" title="#{bundle.CreateRevisionllantasTitle_statusrevision}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisionllantasController.create}" value="#{bundle.CreateRevisionllantasSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{revisionllantasController.prepareList}" value="#{bundle.CreateRevisionllantasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRevisionllantasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

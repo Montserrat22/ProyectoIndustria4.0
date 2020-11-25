@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProcesoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{procesoController.selected.id}" title="#{bundle.CreateProcesoTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{procesoController.selected.status}" title="#{bundle.CreateProcesoTitle_status}" />
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_idCarro}" for="idCarro" />
+                    <h:selectOneMenu id="idCarro" value="#{procesoController.selected.idCarro}" title="#{bundle.CreateProcesoTitle_idCarro}" >
+                        <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_pcinco}" for="pcinco" />
+                    <h:selectOneMenu id="pcinco" value="#{procesoController.selected.pcinco}" title="#{bundle.CreateProcesoTitle_pcinco}" >
+                        <f:selectItems value="#{procesocincoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_pcuatro}" for="pcuatro" />
+                    <h:selectOneMenu id="pcuatro" value="#{procesoController.selected.pcuatro}" title="#{bundle.CreateProcesoTitle_pcuatro}" >
+                        <f:selectItems value="#{procesocuatroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_pdos}" for="pdos" />
+                    <h:selectOneMenu id="pdos" value="#{procesoController.selected.pdos}" title="#{bundle.CreateProcesoTitle_pdos}" >
+                        <f:selectItems value="#{procesodosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_pocho}" for="pocho" />
+                    <h:selectOneMenu id="pocho" value="#{procesoController.selected.pocho}" title="#{bundle.CreateProcesoTitle_pocho}" >
+                        <f:selectItems value="#{procesoochoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_pseis}" for="pseis" />
+                    <h:selectOneMenu id="pseis" value="#{procesoController.selected.pseis}" title="#{bundle.CreateProcesoTitle_pseis}" >
+                        <f:selectItems value="#{procesoseisController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_psiete}" for="psiete" />
+                    <h:selectOneMenu id="psiete" value="#{procesoController.selected.psiete}" title="#{bundle.CreateProcesoTitle_psiete}" >
+                        <f:selectItems value="#{procesosieteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_ptres}" for="ptres" />
+                    <h:selectOneMenu id="ptres" value="#{procesoController.selected.ptres}" title="#{bundle.CreateProcesoTitle_ptres}" >
+                        <f:selectItems value="#{procesotresController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateProcesoLabel_puno}" for="puno" />
+                    <h:selectOneMenu id="puno" value="#{procesoController.selected.puno}" title="#{bundle.CreateProcesoTitle_puno}" >
+                        <f:selectItems value="#{procesounoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{procesoController.create}" value="#{bundle.CreateProcesoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{procesoController.prepareList}" value="#{bundle.CreateProcesoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProcesoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

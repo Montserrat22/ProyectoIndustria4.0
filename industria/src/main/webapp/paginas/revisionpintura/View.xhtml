@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRevisionpinturaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRevisionpinturaLabel_id}"/>
+                    <h:outputText value="#{revisionpinturaController.selected.id}" title="#{bundle.ViewRevisionpinturaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpinturaLabel_uniformidad}"/>
+                    <h:outputText value="#{revisionpinturaController.selected.uniformidad}" title="#{bundle.ViewRevisionpinturaTitle_uniformidad}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpinturaLabel_escurrimiento}"/>
+                    <h:outputText value="#{revisionpinturaController.selected.escurrimiento}" title="#{bundle.ViewRevisionpinturaTitle_escurrimiento}"/>
+                    <h:outputText value="#{bundle.ViewRevisionpinturaLabel_statusrevision}"/>
+                    <h:outputText value="#{revisionpinturaController.selected.statusrevision}" title="#{bundle.ViewRevisionpinturaTitle_statusrevision}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisionpinturaController.destroyAndView}" value="#{bundle.ViewRevisionpinturaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRevisionpinturaEditLink}"/>
+                <br />
+                <h:commandLink action="#{revisionpinturaController.prepareCreate}" value="#{bundle.ViewRevisionpinturaCreateLink}" />
+                <br />
+                <h:commandLink action="#{revisionpinturaController.prepareList}" value="#{bundle.ViewRevisionpinturaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRevisionpinturaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

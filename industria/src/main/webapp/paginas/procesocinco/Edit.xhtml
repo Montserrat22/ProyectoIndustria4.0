@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProcesocincoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{procesocincoController.selected.id}" title="#{bundle.EditProcesocincoTitle_id}" required="true" requiredMessage="#{bundle.EditProcesocincoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_hora}" for="hora" />
+                    <h:inputText id="hora" value="#{procesocincoController.selected.hora}" title="#{bundle.EditProcesocincoTitle_hora}" />
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{procesocincoController.selected.fecha}" title="#{bundle.EditProcesocincoTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_statusproceso}" for="statusproceso" />
+                    <h:inputText id="statusproceso" value="#{procesocincoController.selected.statusproceso}" title="#{bundle.EditProcesocincoTitle_statusproceso}" />
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_idCarro}" for="idCarro" />
+                    <h:selectOneMenu id="idCarro" value="#{procesocincoController.selected.idCarro}" title="#{bundle.EditProcesocincoTitle_idCarro}" >
+                        <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_idInventario}" for="idInventario" />
+                    <h:selectOneMenu id="idInventario" value="#{procesocincoController.selected.idInventario}" title="#{bundle.EditProcesocincoTitle_idInventario}" >
+                        <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesocincoLabel_idSolicitud}" for="idSolicitud" />
+                    <h:selectOneMenu id="idSolicitud" value="#{procesocincoController.selected.idSolicitud}" title="#{bundle.EditProcesocincoTitle_idSolicitud}" >
+                        <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{procesocincoController.update}" value="#{bundle.EditProcesocincoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditProcesocincoViewLink}"/>
+                <br />
+                <h:commandLink action="#{procesocincoController.prepareList}" value="#{bundle.EditProcesocincoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditProcesocincoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

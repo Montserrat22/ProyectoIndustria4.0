@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRevisioninterioresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRevisioninterioresLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{revisioninterioresController.selected.id}" title="#{bundle.EditRevisioninterioresTitle_id}" required="true" requiredMessage="#{bundle.EditRevisioninterioresRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditRevisioninterioresLabel_freno}" for="freno" />
+                    <h:inputText id="freno" value="#{revisioninterioresController.selected.freno}" title="#{bundle.EditRevisioninterioresTitle_freno}" />
+                    <h:outputLabel value="#{bundle.EditRevisioninterioresLabel_volante}" for="volante" />
+                    <h:inputText id="volante" value="#{revisioninterioresController.selected.volante}" title="#{bundle.EditRevisioninterioresTitle_volante}" />
+                    <h:outputLabel value="#{bundle.EditRevisioninterioresLabel_asiento}" for="asiento" />
+                    <h:inputText id="asiento" value="#{revisioninterioresController.selected.asiento}" title="#{bundle.EditRevisioninterioresTitle_asiento}" />
+                    <h:outputLabel value="#{bundle.EditRevisioninterioresLabel_statusrevision}" for="statusrevision" />
+                    <h:inputText id="statusrevision" value="#{revisioninterioresController.selected.statusrevision}" title="#{bundle.EditRevisioninterioresTitle_statusrevision}" />
+                </h:panelGrid>
+                <h:commandLink action="#{revisioninterioresController.update}" value="#{bundle.EditRevisioninterioresSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRevisioninterioresViewLink}"/>
+                <br />
+                <h:commandLink action="#{revisioninterioresController.prepareList}" value="#{bundle.EditRevisioninterioresShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRevisioninterioresIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

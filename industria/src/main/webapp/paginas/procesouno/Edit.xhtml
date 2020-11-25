@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProcesounoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{procesounoController.selected.id}" title="#{bundle.EditProcesounoTitle_id}" required="true" requiredMessage="#{bundle.EditProcesounoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_hora}" for="hora" />
+                    <h:inputText id="hora" value="#{procesounoController.selected.hora}" title="#{bundle.EditProcesounoTitle_hora}" />
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{procesounoController.selected.fecha}" title="#{bundle.EditProcesounoTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_statusproceso}" for="statusproceso" />
+                    <h:inputText id="statusproceso" value="#{procesounoController.selected.statusproceso}" title="#{bundle.EditProcesounoTitle_statusproceso}" />
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_idCarro}" for="idCarro" />
+                    <h:selectOneMenu id="idCarro" value="#{procesounoController.selected.idCarro}" title="#{bundle.EditProcesounoTitle_idCarro}" >
+                        <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_idInventario}" for="idInventario" />
+                    <h:selectOneMenu id="idInventario" value="#{procesounoController.selected.idInventario}" title="#{bundle.EditProcesounoTitle_idInventario}" >
+                        <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditProcesounoLabel_idSolicitud}" for="idSolicitud" />
+                    <h:selectOneMenu id="idSolicitud" value="#{procesounoController.selected.idSolicitud}" title="#{bundle.EditProcesounoTitle_idSolicitud}" >
+                        <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{procesounoController.update}" value="#{bundle.EditProcesounoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditProcesounoViewLink}"/>
+                <br />
+                <h:commandLink action="#{procesounoController.prepareList}" value="#{bundle.EditProcesounoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditProcesounoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

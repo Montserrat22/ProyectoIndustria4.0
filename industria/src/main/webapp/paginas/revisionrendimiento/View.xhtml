@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRevisionrendimientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_id}"/>
+                    <h:outputText value="#{revisionrendimientoController.selected.id}" title="#{bundle.ViewRevisionrendimientoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_rpm}"/>
+                    <h:outputText value="#{revisionrendimientoController.selected.rpm}" title="#{bundle.ViewRevisionrendimientoTitle_rpm}"/>
+                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_statusrevision}"/>
+                    <h:outputText value="#{revisionrendimientoController.selected.statusrevision}" title="#{bundle.ViewRevisionrendimientoTitle_statusrevision}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisionrendimientoController.destroyAndView}" value="#{bundle.ViewRevisionrendimientoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRevisionrendimientoEditLink}"/>
+                <br />
+                <h:commandLink action="#{revisionrendimientoController.prepareCreate}" value="#{bundle.ViewRevisionrendimientoCreateLink}" />
+                <br />
+                <h:commandLink action="#{revisionrendimientoController.prepareList}" value="#{bundle.ViewRevisionrendimientoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRevisionrendimientoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

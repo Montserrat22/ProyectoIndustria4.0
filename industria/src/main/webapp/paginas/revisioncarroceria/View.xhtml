@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRevisioncarroceriaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRevisioncarroceriaLabel_id}"/>
+                    <h:outputText value="#{revisioncarroceriaController.selected.id}" title="#{bundle.ViewRevisioncarroceriaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRevisioncarroceriaLabel_uniformidad}"/>
+                    <h:outputText value="#{revisioncarroceriaController.selected.uniformidad}" title="#{bundle.ViewRevisioncarroceriaTitle_uniformidad}"/>
+                    <h:outputText value="#{bundle.ViewRevisioncarroceriaLabel_porosidad}"/>
+                    <h:outputText value="#{revisioncarroceriaController.selected.porosidad}" title="#{bundle.ViewRevisioncarroceriaTitle_porosidad}"/>
+                    <h:outputText value="#{bundle.ViewRevisioncarroceriaLabel_statusrevision}"/>
+                    <h:outputText value="#{revisioncarroceriaController.selected.statusrevision}" title="#{bundle.ViewRevisioncarroceriaTitle_statusrevision}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{revisioncarroceriaController.destroyAndView}" value="#{bundle.ViewRevisioncarroceriaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRevisioncarroceriaEditLink}"/>
+                <br />
+                <h:commandLink action="#{revisioncarroceriaController.prepareCreate}" value="#{bundle.ViewRevisioncarroceriaCreateLink}" />
+                <br />
+                <h:commandLink action="#{revisioncarroceriaController.prepareList}" value="#{bundle.ViewRevisioncarroceriaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRevisioncarroceriaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

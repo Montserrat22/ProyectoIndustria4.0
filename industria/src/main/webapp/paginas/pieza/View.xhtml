@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPiezaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPiezaLabel_id}"/>
+                    <h:outputText value="#{piezaController.selected.id}" title="#{bundle.ViewPiezaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewPiezaLabel_idProveedor}"/>
+                    <h:outputText value="#{piezaController.selected.idProveedor}" title="#{bundle.ViewPiezaTitle_idProveedor}"/>
+                    <h:outputText value="#{bundle.ViewPiezaLabel_nombre}"/>
+                    <h:outputText value="#{piezaController.selected.nombre}" title="#{bundle.ViewPiezaTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewPiezaLabel_descripcion}"/>
+                    <h:outputText value="#{piezaController.selected.descripcion}" title="#{bundle.ViewPiezaTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewPiezaLabel_preciou}"/>
+                    <h:outputText value="#{piezaController.selected.preciou}" title="#{bundle.ViewPiezaTitle_preciou}"/>
+                    <h:outputText value="#{bundle.ViewPiezaLabel_status}"/>
+                    <h:outputText value="#{piezaController.selected.status}" title="#{bundle.ViewPiezaTitle_status}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{piezaController.destroyAndView}" value="#{bundle.ViewPiezaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPiezaEditLink}"/>
+                <br />
+                <h:commandLink action="#{piezaController.prepareCreate}" value="#{bundle.ViewPiezaCreateLink}" />
+                <br />
+                <h:commandLink action="#{piezaController.prepareList}" value="#{bundle.ViewPiezaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPiezaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
