@@ -1,27 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-    <h:body>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
         <br />
-        <h:link outcome="/paginas/procesoocho/List" value="Show All Procesoocho Items"/>
+        <a href="/industria/faces/paginas/procesoocho/List.xhtml" class="button button5">Proceso 8 Calidad</a>
         <br />
-        <h:link outcome="/paginas/revisioncarroceria/List" value="Show All Revisioncarroceria Items"/>
+        <a href="/industria/faces/paginas/revisioncarroceria/List.xhtml" class="button button5">Revision de carroceria</a>
         <br />
-        <h:link outcome="/paginas/revisioninteriores/List" value="Show All Revisioninteriores Items"/>
+       <a href="/industria/faces/paginas/revisioninteriores/List.xhtml" class="button button5">Revision de interiores</a>
+
         <br />
-        <h:link outcome="/paginas/revisionllantas/List" value="Show All Revisionllantas Items"/>
+       <a href="/industria/faces/paginas/revisionllantas/List.xhtml" class="button button5">Revision de llantas</a>
+
         <br />
-        <h:link outcome="/paginas/revisionmotor/List" value="Show All Revisionmotor Items"/>
+        <a href="/industria/faces/paginas/revisionmotor/List.xhtml" class="button button5">Revision de motor</a>
+
         <br />
-        <h:link outcome="/paginas/revisionpintura/List" value="Show All Revisionpintura Items"/>
+        <a href="/industria/faces/paginas/revisionpintura/List.xhtml" class="button button5">Revision de pintura</a>
+
         <br />
-        <h:link outcome="/paginas/revisionpuertas/List" value="Show All Revisionpuertas Items"/>
+       <a href="/industria/faces/paginas/revisionpuertas/List.xhtml" class="button button5">Revision de puertas</a>
         <br />
-        <h:link outcome="/paginas/revisionrendimiento/List" value="Show All Revisionrendimiento Items"/>
-    </h:body>
+       <a href="/industria/faces/paginas/revisionrendimiento/List.xhtml" class="button button5">Revision de rendimiento</a>
+
+  </ui:define>
+    </ui:composition>
 </html>
 

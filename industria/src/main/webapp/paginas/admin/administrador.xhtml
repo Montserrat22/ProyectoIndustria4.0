@@ -1,21 +1,34 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css"/>
     <h:head>
+       
         <title>Facelet Title</title>
     </h:head>
-    <h:body>
+        
+    <ui:composition template="/template.xhtml">
+           <ui:define name="body">
+              
+         <a href="/industria/faces/paginas/carro/List.xhtml" class="button button5">Mostrar todos los Autos</a>
+
         <br />
-        <h:link outcome="/paginas/carro/List" value="Show All Carro Items"/>
+        <a href="/industria/faces/paginas/inventario/List.xhtml" class="button button5">Mostrar todo el inventario</a>
+       
         <br />
-        <h:link outcome="/paginas/inventario/List" value="Show All Inventario Items"/>
+         <a href="/industria/faces/paginas/pieza/List.xhtml" class="button button5">Mostrar todas las piezas</a>
         <br />
-        <h:link outcome="/paginas/pieza/List" value="Show All Pieza Items"/>
+         <a href="/industria/faces/paginas/proceso/List.xhtml" class="button button5">Mostrar todos los procesos</a>
+     
         <br />
-        <h:link outcome="/paginas/proceso/List" value="Show All Proceso Items"/>
+         <a href="/industria/faces/paginas/slicitud/List.xhtml" class="button button5">Mostrar todas las solicitudes</a>
         <br />
-        <h:link outcome="/paginas/slicitud/List" value="Show All Slicitud Items"/>
-    </h:body>
+    
+         </ui:define>
+
+    </ui:composition>
 </html>
 

@@ -1,19 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-    <h:body>
+   
+        <ui:composition template="/template.xhtml">
+           <ui:define name="body">
         <br />
-        <h:link outcome="/paginas/procesoseis/List" value="Show All Procesoseis Items"/>
+         <a href="/industria/faces/paginas/procesoseis/List.xhtml" class="button button5">Proceso 6 interiores</a>
+         <br />
+         <a href="/industria/faces/paginas/interiorasiento/List.xhtml" class="button button5">Asientos</a>
+          <br />
+         <a href="/industria/faces/paginas/interiorfreno/List.xhtml" class="button button5">Freno de mano</a>
+            <br />
+         <a href="/industria/faces/paginas/interiorvolante/List.xhtml" class="button button5">Volante</a>
+   
+</ui:define>
+            </ui:composition>
         <br />
-        <h:link outcome="/paginas/interiorasiento/List" value="Show All Interiorasiento Items"/>
-        <br />
-        <h:link outcome="/paginas/interiorfreno/List" value="Show All Interiorfreno Items"/>
-        <br />
-        <h:link outcome="/paginas/interiorvolante/List" value="Show All Interiorvolante Items"/>
-    </h:body>
+       
 </html>
 
