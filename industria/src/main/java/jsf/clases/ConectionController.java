@@ -12,8 +12,8 @@ import java.util.logging.Logger;
 public class ConectionController {
 
     Connection cn = null;
-    String pass = "123456";
-    String user = "irving";
+    String pass = "root";
+    String user = "postgres";
 
     public ConectionController() {
 

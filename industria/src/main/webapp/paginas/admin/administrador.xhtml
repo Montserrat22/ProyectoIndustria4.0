@@ -6,6 +6,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        <h:form>
         <br />
         <h:link outcome="/paginas/carro/List" value="Show All Carro Items"/>
         <br />
@@ -16,6 +17,11 @@
         <h:link outcome="/paginas/proceso/List" value="Show All Proceso Items"/>
         <br />
         <h:link outcome="/paginas/slicitud/List" value="Show All Slicitud Items"/>
+        <br/>
+        <h:link outcome="/paginas/rol/List" value="Show All Rol Items"/>
+        <br/>
+        <h:commandButton id="bt-reg" value="Register" action="/paginas/usuario/Create" ></h:commandButton>
+        </h:form>
     </h:body>
 </html>
 
