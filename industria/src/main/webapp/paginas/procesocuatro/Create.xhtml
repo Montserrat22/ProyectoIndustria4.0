@@ -15,39 +15,38 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{procesocuatroController.selected.id}" title="#{bundle.CreateProcesocuatroTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesocuatroRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_rin}" for="rin" />
+                    <h:outputLabel value="Rin" for="rin" />
                     <h:inputText id="rin" value="#{procesocuatroController.selected.rin}" title="#{bundle.CreateProcesocuatroTitle_rin}" />
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_hora}" for="hora" />
+                    <h:outputLabel value="Hora" for="hora" />
                     <h:inputText id="hora" value="#{procesocuatroController.selected.hora}" title="#{bundle.CreateProcesocuatroTitle_hora}" />
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_fecha}" for="fecha" />
+                    <h:outputLabel value="Fecha" for="fecha" />
                     <h:inputText id="fecha" value="#{procesocuatroController.selected.fecha}" title="#{bundle.CreateProcesocuatroTitle_fecha}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_statusproceso}" for="statusproceso" />
+                    <h:outputLabel value="Proceso" for="statusproceso" />
                     <h:inputText id="statusproceso" value="#{procesocuatroController.selected.statusproceso}" title="#{bundle.CreateProcesocuatroTitle_statusproceso}" />
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_idCarro}" for="idCarro" />
+                    <h:outputLabel value="Carro" for="idCarro" />
                     <h:selectOneMenu id="idCarro" value="#{procesocuatroController.selected.idCarro}" title="#{bundle.CreateProcesocuatroTitle_idCarro}" >
                         <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_idInventario}" for="idInventario" />
+                    <h:outputLabel value="Inventario" for="idInventario" />
                     <h:selectOneMenu id="idInventario" value="#{procesocuatroController.selected.idInventario}" title="#{bundle.CreateProcesocuatroTitle_idInventario}" >
                         <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesocuatroLabel_idSolicitud}" for="idSolicitud" />
+                    <h:outputLabel value="Solicitud" for="idSolicitud" />
                     <h:selectOneMenu id="idSolicitud" value="#{procesocuatroController.selected.idSolicitud}" title="#{bundle.CreateProcesocuatroTitle_idSolicitud}" >
                         <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{procesocuatroController.create}" value="#{bundle.CreateProcesocuatroSaveLink}" />
+                <h:commandLink action="#{procesocuatroController.create}" value="Guardar" class="button bg-success"/>
                 <br />
                 <br />
-                <h:commandLink action="#{procesocuatroController.prepareList}" value="#{bundle.CreateProcesocuatroShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{procesocuatroController.prepareList}" value="Ver todos" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProcesocuatroIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

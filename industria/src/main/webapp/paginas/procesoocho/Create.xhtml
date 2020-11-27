@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateProcesoochoTitle}"></h:outputText>
+            <h:outputText value="Proceso 8"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,59 +15,58 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_id}" for="id" />
+                    <h:outputLabel value="Id " for="id" />
                     <h:inputText id="id" value="#{procesoochoController.selected.id}" title="#{bundle.CreateProcesoochoTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesoochoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_fechainspeccion}" for="fechainspeccion" />
+                    <h:outputLabel value="Fecha de inspeccion" for="fechainspeccion" />
                     <h:inputText id="fechainspeccion" value="#{procesoochoController.selected.fechainspeccion}" title="#{bundle.CreateProcesoochoTitle_fechainspeccion}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_statusproceso}" for="statusproceso" />
+                    <h:outputLabel value="Status proceso" for="statusproceso" />
                     <h:inputText id="statusproceso" value="#{procesoochoController.selected.statusproceso}" title="#{bundle.CreateProcesoochoTitle_statusproceso}" />
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_idCarro}" for="idCarro" />
+                    <h:outputLabel value="Carro" for="idCarro" />
                     <h:selectOneMenu id="idCarro" value="#{procesoochoController.selected.idCarro}" title="#{bundle.CreateProcesoochoTitle_idCarro}" >
                         <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rcarroceria}" for="rcarroceria" />
+                    <h:outputLabel value="Carroceria" for="rcarroceria" />
                     <h:selectOneMenu id="rcarroceria" value="#{procesoochoController.selected.rcarroceria}" title="#{bundle.CreateProcesoochoTitle_rcarroceria}" >
                         <f:selectItems value="#{revisioncarroceriaController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rinteriores}" for="rinteriores" />
+                    <h:outputLabel value="Interiores" for="rinteriores" />
                     <h:selectOneMenu id="rinteriores" value="#{procesoochoController.selected.rinteriores}" title="#{bundle.CreateProcesoochoTitle_rinteriores}" >
                         <f:selectItems value="#{revisioninterioresController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rllantas}" for="rllantas" />
+                    <h:outputLabel value="Llantas" for="rllantas" />
                     <h:selectOneMenu id="rllantas" value="#{procesoochoController.selected.rllantas}" title="#{bundle.CreateProcesoochoTitle_rllantas}" >
                         <f:selectItems value="#{revisionllantasController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rmotor}" for="rmotor" />
+                    <h:outputLabel value="Motor" for="rmotor" />
                     <h:selectOneMenu id="rmotor" value="#{procesoochoController.selected.rmotor}" title="#{bundle.CreateProcesoochoTitle_rmotor}" >
                         <f:selectItems value="#{revisionmotorController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rpintura}" for="rpintura" />
+                    <h:outputLabel value="Pintura" for="rpintura" />
                     <h:selectOneMenu id="rpintura" value="#{procesoochoController.selected.rpintura}" title="#{bundle.CreateProcesoochoTitle_rpintura}" >
                         <f:selectItems value="#{revisionpinturaController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rpuertas}" for="rpuertas" />
+                    <h:outputLabel value="Puertas" for="rpuertas" />
                     <h:selectOneMenu id="rpuertas" value="#{procesoochoController.selected.rpuertas}" title="#{bundle.CreateProcesoochoTitle_rpuertas}" >
                         <f:selectItems value="#{revisionpuertasController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_rrendimiento}" for="rrendimiento" />
+                    <h:outputLabel value="Rendimiento" for="rrendimiento" />
                     <h:selectOneMenu id="rrendimiento" value="#{procesoochoController.selected.rrendimiento}" title="#{bundle.CreateProcesoochoTitle_rrendimiento}" >
                         <f:selectItems value="#{revisionrendimientoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoochoLabel_idSolicitud}" for="idSolicitud" />
+                    <h:outputLabel value="Solicitud" for="idSolicitud" />
                     <h:selectOneMenu id="idSolicitud" value="#{procesoochoController.selected.idSolicitud}" title="#{bundle.CreateProcesoochoTitle_idSolicitud}" >
                         <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{procesoochoController.create}" value="#{bundle.CreateProcesoochoSaveLink}" />
+                <h:commandLink action="#{procesoochoController.create}" value="Guardar" class="button bg-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{procesoochoController.prepareList}" value="#{bundle.CreateProcesoochoShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{procesoochoController.prepareList}" value="Ver todos" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProcesoochoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

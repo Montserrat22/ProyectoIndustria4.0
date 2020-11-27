@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListProcesoochoTitle}"></h:outputText>
+            <h:outputText value="Proceso 8"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
@@ -22,13 +22,13 @@
                     <h:dataTable value="#{procesoochoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_id}"/>
+                                <h:outputText value="Id"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_fechainspeccion}"/>
+                                <h:outputText value="Fecha inspeccion"/>
                             </f:facet>
                             <h:outputText value="#{item.fechainspeccion}">
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -36,61 +36,61 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_statusproceso}"/>
+                                <h:outputText value="Status proceso"/>
                             </f:facet>
                             <h:outputText value="#{item.statusproceso}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_idCarro}"/>
+                                <h:outputText value="Carro"/>
                             </f:facet>
                             <h:outputText value="#{item.idCarro}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rcarroceria}"/>
+                                <h:outputText value="Carroceria"/>
                             </f:facet>
                             <h:outputText value="#{item.rcarroceria}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rinteriores}"/>
+                                <h:outputText value="Interiores"/>
                             </f:facet>
                             <h:outputText value="#{item.rinteriores}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rllantas}"/>
+                                <h:outputText value="LLantas"/>
                             </f:facet>
                             <h:outputText value="#{item.rllantas}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rmotor}"/>
+                                <h:outputText value="Motor"/>
                             </f:facet>
                             <h:outputText value="#{item.rmotor}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rpintura}"/>
+                                <h:outputText value="Pintura"/>
                             </f:facet>
                             <h:outputText value="#{item.rpintura}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rpuertas}"/>
+                                <h:outputText value="Puertas"/>
                             </f:facet>
                             <h:outputText value="#{item.rpuertas}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_rrendimiento}"/>
+                                <h:outputText value="rendimiento"/>
                             </f:facet>
                             <h:outputText value="#{item.rrendimiento}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListProcesoochoTitle_idSolicitud}"/>
+                                <h:outputText value="Id solicitud"/>
                             </f:facet>
                             <h:outputText value="#{item.idSolicitud}"/>
                         </h:column>
@@ -98,19 +98,18 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{procesoochoController.prepareView}" value="#{bundle.ListProcesoochoViewLink}"/>
+                            <h:commandLink action="#{procesoochoController.prepareView}" value="Ver detalles "/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{procesoochoController.prepareEdit}" value="#{bundle.ListProcesoochoEditLink}"/>
+                            <h:commandLink action="#{procesoochoController.prepareEdit}" value="Editar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{procesoochoController.destroy}" value="#{bundle.ListProcesoochoDestroyLink}"/>
+                            <h:commandLink action="#{procesoochoController.destroy}" value="Elimianr "/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{procesoochoController.prepareCreate}" value="#{bundle.ListProcesoochoCreateLink}"/>
+                <h:commandLink action="#{procesoochoController.prepareCreate}" value="Crear" class="button bg-success"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListProcesoochoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

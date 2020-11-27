@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListSlicitudTitle}"></h:outputText>
+            <h:outputText value="Solicitud"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
@@ -22,25 +22,25 @@
                     <h:dataTable value="#{slicitudController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSlicitudTitle_id}"/>
+                                <h:outputText value="Id"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSlicitudTitle_fechai}"/>
+                                <h:outputText value="Fecha Inicio"/>
                             </f:facet>
                             <h:outputText value="#{item.fechai}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSlicitudTitle_fechaf}"/>
+                                <h:outputText value="fecha final"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaf}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListSlicitudTitle_status}"/>
+                                <h:outputText value="Status "/>
                             </f:facet>
                             <h:outputText value="#{item.status}"/>
                         </h:column>
@@ -48,16 +48,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{slicitudController.prepareView}" value="#{bundle.ListSlicitudViewLink}"/>
+                            <h:commandLink action="#{slicitudController.prepareView}" value="Ver"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{slicitudController.prepareEdit}" value="#{bundle.ListSlicitudEditLink}"/>
+                            <h:commandLink action="#{slicitudController.prepareEdit}" value="Editar"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{slicitudController.destroy}" value="#{bundle.ListSlicitudDestroyLink}"/>
+                            <h:commandLink action="#{slicitudController.destroy}" value="Eliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{slicitudController.prepareCreate}" value="#{bundle.ListSlicitudCreateLink}"/>
+                <h:commandLink action="#{slicitudController.prepareCreate}" value="Crear" class="button bg-success"/>
                 <br />
                 <br />
                 <h:link outcome="/paginas/admin/administrador.xhtml" value="Regresar"/>

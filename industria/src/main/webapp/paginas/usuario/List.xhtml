@@ -48,16 +48,16 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{usuarioController.prepareView}" value="#{bundle.ListUsuarioViewLink}"/>
+                            <h:commandLink action="#{usuarioController.prepareView}" value="Ver detalles  " />
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuarioController.prepareEdit}" value="#{bundle.ListUsuarioEditLink}"/>
+                            <h:commandLink action="#{usuarioController.prepareEdit}" value="Editar "/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuarioController.destroy}" value="#{bundle.ListUsuarioDestroyLink}"/>
+                            <h:commandLink action="#{usuarioController.destroy}" value="Eliminar"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{usuarioController.prepareCreate}" value="#{bundle.ListUsuarioCreateLink}"/>
+                <h:commandLink action="#{usuarioController.prepareCreate}" value="Crear usuario" class="button bg-success"/>
                 <br />
                 <br />
                 <h:link outcome="/paginas/admin/administrador.xhtml" value="Regresar"/>

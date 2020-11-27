@@ -15,37 +15,37 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{procesotresController.selected.id}" title="#{bundle.CreateProcesotresTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesotresRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_hora}" for="hora" />
+                    <h:outputLabel value="Hora" for="hora" />
                     <h:inputText id="hora" value="#{procesotresController.selected.hora}" title="#{bundle.CreateProcesotresTitle_hora}" />
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_fecha}" for="fecha" />
+                    <h:outputLabel value="Fecha" for="fecha" />
                     <h:inputText id="fecha" value="#{procesotresController.selected.fecha}" title="#{bundle.CreateProcesotresTitle_fecha}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_statusproceso}" for="statusproceso" />
+                    <h:outputLabel value="Status proceso" for="statusproceso" />
                     <h:inputText id="statusproceso" value="#{procesotresController.selected.statusproceso}" title="#{bundle.CreateProcesotresTitle_statusproceso}" />
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_idCarro}" for="idCarro" />
+                    <h:outputLabel value="Carro" for="idCarro" />
                     <h:selectOneMenu id="idCarro" value="#{procesotresController.selected.idCarro}" title="#{bundle.CreateProcesotresTitle_idCarro}" >
                         <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_idInventario}" for="idInventario" />
+                    <h:outputLabel value="Inventario" for="idInventario" />
                     <h:selectOneMenu id="idInventario" value="#{procesotresController.selected.idInventario}" title="#{bundle.CreateProcesotresTitle_idInventario}" >
                         <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesotresLabel_idSolicitud}" for="idSolicitud" />
+                    <h:outputLabel value="Solicitud" for="idSolicitud" />
                     <h:selectOneMenu id="idSolicitud" value="#{procesotresController.selected.idSolicitud}" title="#{bundle.CreateProcesotresTitle_idSolicitud}" >
                         <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{procesotresController.create}" value="#{bundle.CreateProcesotresSaveLink}" />
+                <h:commandLink action="#{procesotresController.create}" value="Crear" class="button bg-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{procesotresController.prepareList}" value="#{bundle.CreateProcesotresShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{procesotresController.prepareList}" value="Ver todos" immediate="true" />
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProcesotresIndexLink}"/>
+                
             </h:form>
         </ui:define>
     </ui:composition>

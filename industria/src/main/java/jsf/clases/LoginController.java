@@ -48,35 +48,35 @@ public class LoginController implements Serializable {
                 }
                 if (rolString.contains("1")) {
                     System.out.println("Entrando al proceso 1");
-                    return "/paginas/admin/carroceria.xhtml";
+                    return "/paginas/procesouno/List.xhtml";
                 }
                 if (rolString.contains("2")) {
                     System.out.println("Entrando al proceso 2");
-                    return "/paginas/admin/puertas.xhtml";
+                    return "/paginas/procesodos/List.xhtml";
                 }
                 if (rolString.contains("3")) {
                     System.out.println("Entrando al proceso 3");
-                    return "/paginas/admin/pintura.xhtml";
+                    return "/paginas/procesotres/List.xhtml";
                 }
                 if (rolString.contains("4")) {
                     System.out.println("Entrando al proceso 4");
-                    return "/paginas/admin/llantas.xhtml";
+                    return "/paginas/procesocuatro/List.xhtml";
                 }
                 if (rolString.contains("5")) {
                     System.out.println("Entrando al proceso 5");
-                    return "/paginas/admin/motor.xhtml";
+                    return "/paginas/procesocinco/List.xhtml";
                 }
                 if (rolString.contains("6")) {
                     System.out.println("Entrando al proceso 6");
-                    return "/paginas/admin/interiores.xhtml";
+                    return "/paginas/procesoseis/List.xhtml";
                 }
                 if (rolString.contains("7")) {
                     System.out.println("Entrando al proceso 7");
-                    return "/paginas/admin/rendimiento.xhtml";
+                    return "/paginas/procesosiete/List.xhtml";
                 }
                 if (rolString.contains("8")) {
                     System.out.println("Entrando al proceso 8");
-                    return "/paginas/admin/calidad.xhtml";
+                    return "/paginas/procesoocho/List.xhtml";
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);

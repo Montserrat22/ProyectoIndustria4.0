@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateProcesoseisTitle}"></h:outputText>
+            <h:outputText value="Crear proceso 6"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,45 +15,44 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{procesoseisController.selected.id}" title="#{bundle.CreateProcesoseisTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesoseisRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_hora}" for="hora" />
+                    <h:outputLabel value="Hora" for="hora" />
                     <h:inputText id="hora" value="#{procesoseisController.selected.hora}" title="#{bundle.CreateProcesoseisTitle_hora}" />
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_fecha}" for="fecha" />
+                    <h:outputLabel value="Fecha" for="fecha" />
                     <h:inputText id="fecha" value="#{procesoseisController.selected.fecha}" title="#{bundle.CreateProcesoseisTitle_fecha}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_statusproceso}" for="statusproceso" />
+                    <h:outputLabel value="Status proceso" for="statusproceso" />
                     <h:inputText id="statusproceso" value="#{procesoseisController.selected.statusproceso}" title="#{bundle.CreateProcesoseisTitle_statusproceso}" />
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_idCarro}" for="idCarro" />
+                    <h:outputLabel value="Carro" for="idCarro" />
                     <h:selectOneMenu id="idCarro" value="#{procesoseisController.selected.idCarro}" title="#{bundle.CreateProcesoseisTitle_idCarro}" >
                         <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_iasiento}" for="iasiento" />
+                    <h:outputLabel value="Asiento" for="iasiento" />
                     <h:selectOneMenu id="iasiento" value="#{procesoseisController.selected.iasiento}" title="#{bundle.CreateProcesoseisTitle_iasiento}" >
                         <f:selectItems value="#{interiorasientoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_ifreno}" for="ifreno" />
+                    <h:outputLabel value="Freno" for="ifreno" />
                     <h:selectOneMenu id="ifreno" value="#{procesoseisController.selected.ifreno}" title="#{bundle.CreateProcesoseisTitle_ifreno}" >
                         <f:selectItems value="#{interiorfrenoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_ivolante}" for="ivolante" />
+                    <h:outputLabel value="Volante" for="ivolante" />
                     <h:selectOneMenu id="ivolante" value="#{procesoseisController.selected.ivolante}" title="#{bundle.CreateProcesoseisTitle_ivolante}" >
                         <f:selectItems value="#{interiorvolanteController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesoseisLabel_idSolicitud}" for="idSolicitud" />
+                    <h:outputLabel value="Solicitud" for="idSolicitud" />
                     <h:selectOneMenu id="idSolicitud" value="#{procesoseisController.selected.idSolicitud}" title="#{bundle.CreateProcesoseisTitle_idSolicitud}" >
                         <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{procesoseisController.create}" value="#{bundle.CreateProcesoseisSaveLink}" />
+                <h:commandLink action="#{procesoseisController.create}" value="Guardar"  class="button bg-success"/>
                 <br />
                 <br />
-                <h:commandLink action="#{procesoseisController.prepareList}" value="#{bundle.CreateProcesoseisShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{procesoseisController.prepareList}" value="Ver todos" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProcesoseisIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

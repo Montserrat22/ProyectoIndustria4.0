@@ -15,20 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateCarroLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{carroController.selected.id}" title="#{bundle.CreateCarroTitle_id}" required="true" requiredMessage="#{bundle.CreateCarroRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateCarroLabel_nombre}" for="nombre" />
+                    <h:outputLabel value="Nombre" for="nombre" />
                     <h:inputText id="nombre" value="#{carroController.selected.nombre}" title="#{bundle.CreateCarroTitle_nombre}" />
-                    <h:outputLabel value="#{bundle.CreateCarroLabel_anio}" for="anio" />
+                    <h:outputLabel value="Año" for="anio" />
                     <h:inputText id="anio" value="#{carroController.selected.anio}" title="#{bundle.CreateCarroTitle_anio}" />
-                    <h:outputLabel value="#{bundle.CreateCarroLabel_status}" for="status" />
+                    <h:outputLabel value="Status" for="status" />
                     <h:inputText id="status" value="#{carroController.selected.status}" title="#{bundle.CreateCarroTitle_status}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{carroController.create}" value="#{bundle.CreateCarroSaveLink}" />
+                <h:commandLink action="#{carroController.create}" value="Crear" class="button bg-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{carroController.prepareList}" value="#{bundle.CreateCarroShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{carroController.prepareList}" value="Ver todos" immediate="true"/>
                 <br />
                 <br />
                 <h:link outcome="/index" value="#{bundle.CreateCarroIndexLink}"/>

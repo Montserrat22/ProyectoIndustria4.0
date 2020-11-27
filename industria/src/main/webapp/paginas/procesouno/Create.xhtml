@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateProcesounoTitle}"></h:outputText>
+            <h:outputText value="Crear proceso 1"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,37 +15,37 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{procesounoController.selected.id}" title="#{bundle.CreateProcesounoTitle_id}" required="true" requiredMessage="#{bundle.CreateProcesounoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_hora}" for="hora" />
+                    <h:outputLabel value="Hora" for="hora" />
                     <h:inputText id="hora" value="#{procesounoController.selected.hora}" title="#{bundle.CreateProcesounoTitle_hora}" />
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_fecha}" for="fecha" />
+                    <h:outputLabel value="Fecha" for="fecha" />
                     <h:inputText id="fecha" value="#{procesounoController.selected.fecha}" title="#{bundle.CreateProcesounoTitle_fecha}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_statusproceso}" for="statusproceso" />
+                    <h:outputLabel value="Status del proceso" for="statusproceso" />
                     <h:inputText id="statusproceso" value="#{procesounoController.selected.statusproceso}" title="#{bundle.CreateProcesounoTitle_statusproceso}" />
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_idCarro}" for="idCarro" />
+                    <h:outputLabel value="Carro" for="idCarro" />
                     <h:selectOneMenu id="idCarro" value="#{procesounoController.selected.idCarro}" title="#{bundle.CreateProcesounoTitle_idCarro}" >
                         <f:selectItems value="#{carroController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_idInventario}" for="idInventario" />
+                    <h:outputLabel value="Inventario" for="idInventario" />
                     <h:selectOneMenu id="idInventario" value="#{procesounoController.selected.idInventario}" title="#{bundle.CreateProcesounoTitle_idInventario}" >
                         <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProcesounoLabel_idSolicitud}" for="idSolicitud" />
+                    <h:outputLabel value="Id solicitud" for="idSolicitud" />
                     <h:selectOneMenu id="idSolicitud" value="#{procesounoController.selected.idSolicitud}" title="#{bundle.CreateProcesounoTitle_idSolicitud}" >
                         <f:selectItems value="#{slicitudController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{procesounoController.create}" value="#{bundle.CreateProcesounoSaveLink}" />
+                <h:commandLink action="#{procesounoController.create}" value="Guardar" class="button bg-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{procesounoController.prepareList}" value="#{bundle.CreateProcesounoShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{procesounoController.prepareList}" value="Mostrar todos" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProcesounoIndexLink}"/>
+                
             </h:form>
         </ui:define>
     </ui:composition>
