@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewRevisionllantasTitle}"></h:outputText>
+            <h:outputText value="Ver Revisión Llantas"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,27 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewRevisionllantasLabel_id}"/>
+                    <h:outputText value="ID"/>
                     <h:outputText value="#{revisionllantasController.selected.id}" title="#{bundle.ViewRevisionllantasTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewRevisionllantasLabel_numllantas}"/>
+                    <h:outputText value="Número llantas"/>
                     <h:outputText value="#{revisionllantasController.selected.numllantas}" title="#{bundle.ViewRevisionllantasTitle_numllantas}"/>
-                    <h:outputText value="#{bundle.ViewRevisionllantasLabel_llantasnuevas}"/>
+                    <h:outputText value="Llantas nuevas"/>
                     <h:outputText value="#{revisionllantasController.selected.llantasnuevas}" title="#{bundle.ViewRevisionllantasTitle_llantasnuevas}"/>
-                    <h:outputText value="#{bundle.ViewRevisionllantasLabel_statusrevision}"/>
+                    <h:outputText value="Status"/>
                     <h:outputText value="#{revisionllantasController.selected.statusrevision}" title="#{bundle.ViewRevisionllantasTitle_statusrevision}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{revisionllantasController.destroyAndView}" value="#{bundle.ViewRevisionllantasDestroyLink}"/>
+                <h:commandLink action="#{revisionllantasController.destroyAndView}" value="Eliminar"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewRevisionllantasEditLink}"/>
+                <h:link outcome="Edit" value="Editar"/>
                 <br />
-                <h:commandLink action="#{revisionllantasController.prepareCreate}" value="#{bundle.ViewRevisionllantasCreateLink}" />
+                <h:commandLink action="#{revisionllantasController.prepareCreate}" value="Crear" />
                 <br />
-                <h:commandLink action="#{revisionllantasController.prepareList}" value="#{bundle.ViewRevisionllantasShowAllLink}"/>
+                <h:commandLink action="#{revisionllantasController.prepareList}" value="Lista"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewRevisionllantasIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
 
             </h:form>
         </ui:define>

@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListRevisionmotorTitle}"></h:outputText>
+            <h:outputText value="Lista Revisión Motor"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListRevisionmotorEmpty}" rendered="#{revisionmotorController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="Revisión llantas" rendered="#{revisionmotorController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{revisionmotorController.items.rowCount > 0}">
                     <h:outputText value="#{revisionmotorController.pagination.pageFirstItem + 1}..#{revisionmotorController.pagination.pageLastItem + 1}/#{revisionmotorController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{revisionmotorController.previous}" value="#{bundle.Previous} #{revisionmotorController.pagination.pageSize}" rendered="#{revisionmotorController.pagination.hasPreviousPage}"/>&nbsp;
@@ -57,10 +57,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{revisionmotorController.prepareCreate}" value="#{bundle.ListRevisionmotorCreateLink}"/>
+                <h:commandLink action="#{revisionmotorController.prepareCreate}" value="Crear"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRevisionmotorIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

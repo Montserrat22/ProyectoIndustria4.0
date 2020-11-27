@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListRevisionpuertasTitle}"></h:outputText>
+            <h:outputText value="Lista Revisión Puertas"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListRevisionpuertasEmpty}" rendered="#{revisionpuertasController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="Revisión Puertas" rendered="#{revisionpuertasController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{revisionpuertasController.items.rowCount > 0}">
                     <h:outputText value="#{revisionpuertasController.pagination.pageFirstItem + 1}..#{revisionpuertasController.pagination.pageLastItem + 1}/#{revisionpuertasController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{revisionpuertasController.previous}" value="#{bundle.Previous} #{revisionpuertasController.pagination.pageSize}" rendered="#{revisionpuertasController.pagination.hasPreviousPage}"/>&nbsp;
@@ -57,10 +57,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{revisionpuertasController.prepareCreate}" value="#{bundle.ListRevisionpuertasCreateLink}"/>
+                <h:commandLink action="#{revisionpuertasController.prepareCreate}" value="Crear"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRevisionpuertasIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

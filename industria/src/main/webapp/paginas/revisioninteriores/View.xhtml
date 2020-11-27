@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewRevisioninterioresTitle}"></h:outputText>
+            <h:outputText value="Ver Revisión de Interiores"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,29 +15,29 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_id}"/>
+                    <h:outputText value="ID"/>
                     <h:outputText value="#{revisioninterioresController.selected.id}" title="#{bundle.ViewRevisioninterioresTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_freno}"/>
+                    <h:outputText value="Freno"/>
                     <h:outputText value="#{revisioninterioresController.selected.freno}" title="#{bundle.ViewRevisioninterioresTitle_freno}"/>
-                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_volante}"/>
+                    <h:outputText value="Volante"/>
                     <h:outputText value="#{revisioninterioresController.selected.volante}" title="#{bundle.ViewRevisioninterioresTitle_volante}"/>
-                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_asiento}"/>
+                    <h:outputText value="Asiento"/>
                     <h:outputText value="#{revisioninterioresController.selected.asiento}" title="#{bundle.ViewRevisioninterioresTitle_asiento}"/>
-                    <h:outputText value="#{bundle.ViewRevisioninterioresLabel_statusrevision}"/>
+                    <h:outputText value="Status"/>
                     <h:outputText value="#{revisioninterioresController.selected.statusrevision}" title="#{bundle.ViewRevisioninterioresTitle_statusrevision}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{revisioninterioresController.destroyAndView}" value="#{bundle.ViewRevisioninterioresDestroyLink}"/>
+                <h:commandLink action="#{revisioninterioresController.destroyAndView}" value="Eliminar"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewRevisioninterioresEditLink}"/>
+                <h:link outcome="Edit" value="Editar"/>
                 <br />
-                <h:commandLink action="#{revisioninterioresController.prepareCreate}" value="#{bundle.ViewRevisioninterioresCreateLink}" />
+                <h:commandLink action="#{revisioninterioresController.prepareCreate}" value="Crear" />
                 <br />
-                <h:commandLink action="#{revisioninterioresController.prepareList}" value="#{bundle.ViewRevisioninterioresShowAllLink}"/>
+                <h:commandLink action="#{revisioninterioresController.prepareList}" value="Ver"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewRevisioninterioresIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
 
             </h:form>
         </ui:define>

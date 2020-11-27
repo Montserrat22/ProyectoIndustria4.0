@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateRevisionllantasTitle}"></h:outputText>
+            <h:outputText value="Crear Revisión Llantas"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_id}" for="id" />
+                    <h:outputLabel value="ID" for="id" />
                     <h:inputText id="id" value="#{revisionllantasController.selected.id}" title="#{bundle.CreateRevisionllantasTitle_id}" required="true" requiredMessage="#{bundle.CreateRevisionllantasRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_numllantas}" for="numllantas" />
+                    <h:outputLabel value="Número de llantas" for="numllantas" />
                     <h:inputText id="numllantas" value="#{revisionllantasController.selected.numllantas}" title="#{bundle.CreateRevisionllantasTitle_numllantas}" />
-                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_llantasnuevas}" for="llantasnuevas" />
+                    <h:outputLabel value="Llantas nuevas" for="llantasnuevas" />
                     <h:inputText id="llantasnuevas" value="#{revisionllantasController.selected.llantasnuevas}" title="#{bundle.CreateRevisionllantasTitle_llantasnuevas}" />
-                    <h:outputLabel value="#{bundle.CreateRevisionllantasLabel_statusrevision}" for="statusrevision" />
+                    <h:outputLabel value="Status" for="statusrevision" />
                     <h:inputText id="statusrevision" value="#{revisionllantasController.selected.statusrevision}" title="#{bundle.CreateRevisionllantasTitle_statusrevision}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{revisionllantasController.create}" value="#{bundle.CreateRevisionllantasSaveLink}" />
+                <h:commandLink action="#{revisionllantasController.create}" value="Salvar" />
                 <br />
                 <br />
-                <h:commandLink action="#{revisionllantasController.prepareList}" value="#{bundle.CreateRevisionllantasShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{revisionllantasController.prepareList}" value="Ver" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateRevisionllantasIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

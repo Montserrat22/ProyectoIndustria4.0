@@ -14,7 +14,7 @@
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListInventarioEmpty}" rendered="#{inventarioController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="inventario" rendered="#{inventarioController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{inventarioController.items.rowCount > 0}">
                     <h:outputText value="#{inventarioController.pagination.pageFirstItem + 1}..#{inventarioController.pagination.pageLastItem + 1}/#{inventarioController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{inventarioController.previous}" value="#{bundle.Previous} #{inventarioController.pagination.pageSize}" rendered="#{inventarioController.pagination.hasPreviousPage}"/>&nbsp;

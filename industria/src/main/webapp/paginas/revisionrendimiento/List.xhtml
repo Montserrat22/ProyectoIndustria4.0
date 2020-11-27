@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListRevisionrendimientoTitle}"></h:outputText>
+            <h:outputText value="Lista Revisión Rendimiento"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListRevisionrendimientoEmpty}" rendered="#{revisionrendimientoController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="Revisión Rendimiento" rendered="#{revisionrendimientoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{revisionrendimientoController.items.rowCount > 0}">
                     <h:outputText value="#{revisionrendimientoController.pagination.pageFirstItem + 1}..#{revisionrendimientoController.pagination.pageLastItem + 1}/#{revisionrendimientoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{revisionrendimientoController.previous}" value="#{bundle.Previous} #{revisionrendimientoController.pagination.pageSize}" rendered="#{revisionrendimientoController.pagination.hasPreviousPage}"/>&nbsp;
@@ -51,10 +51,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{revisionrendimientoController.prepareCreate}" value="#{bundle.ListRevisionrendimientoCreateLink}"/>
+                <h:commandLink action="#{revisionrendimientoController.prepareCreate}" value="Crear"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRevisionrendimientoIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

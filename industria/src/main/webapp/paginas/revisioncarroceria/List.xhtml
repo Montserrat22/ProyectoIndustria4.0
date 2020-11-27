@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListRevisioncarroceriaTitle}"></h:outputText>
+            <h:outputText value="Lista Revisión Carroceria"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListRevisioncarroceriaEmpty}" rendered="#{revisioncarroceriaController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="Revisión Carroseria" rendered="#{revisioncarroceriaController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{revisioncarroceriaController.items.rowCount > 0}">
                     <h:outputText value="#{revisioncarroceriaController.pagination.pageFirstItem + 1}..#{revisioncarroceriaController.pagination.pageLastItem + 1}/#{revisioncarroceriaController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{revisioncarroceriaController.previous}" value="#{bundle.Previous} #{revisioncarroceriaController.pagination.pageSize}" rendered="#{revisioncarroceriaController.pagination.hasPreviousPage}"/>&nbsp;
@@ -57,10 +57,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{revisioncarroceriaController.prepareCreate}" value="#{bundle.ListRevisioncarroceriaCreateLink}"/>
+                <h:commandLink action="#{revisioncarroceriaController.prepareCreate}" value="Crear"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRevisioncarroceriaIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

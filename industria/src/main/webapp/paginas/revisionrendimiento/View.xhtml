@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewRevisionrendimientoTitle}"></h:outputText>
+            <h:outputText value="Ver Revisión Rendimiento"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,25 +15,25 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_id}"/>
+                    <h:outputText value="ID"/>
                     <h:outputText value="#{revisionrendimientoController.selected.id}" title="#{bundle.ViewRevisionrendimientoTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_rpm}"/>
+                    <h:outputText value="RPM"/>
                     <h:outputText value="#{revisionrendimientoController.selected.rpm}" title="#{bundle.ViewRevisionrendimientoTitle_rpm}"/>
-                    <h:outputText value="#{bundle.ViewRevisionrendimientoLabel_statusrevision}"/>
+                    <h:outputText value="Status"/>
                     <h:outputText value="#{revisionrendimientoController.selected.statusrevision}" title="#{bundle.ViewRevisionrendimientoTitle_statusrevision}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{revisionrendimientoController.destroyAndView}" value="#{bundle.ViewRevisionrendimientoDestroyLink}"/>
+                <h:commandLink action="#{revisionrendimientoController.destroyAndView}" value="Eliminar"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewRevisionrendimientoEditLink}"/>
+                <h:link outcome="Edit" value="Editar"/>
                 <br />
-                <h:commandLink action="#{revisionrendimientoController.prepareCreate}" value="#{bundle.ViewRevisionrendimientoCreateLink}" />
+                <h:commandLink action="#{revisionrendimientoController.prepareCreate}" value="Crear" />
                 <br />
-                <h:commandLink action="#{revisionrendimientoController.prepareList}" value="#{bundle.ViewRevisionrendimientoShowAllLink}"/>
+                <h:commandLink action="#{revisionrendimientoController.prepareList}" value="Lista"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewRevisionrendimientoIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
 
             </h:form>
         </ui:define>

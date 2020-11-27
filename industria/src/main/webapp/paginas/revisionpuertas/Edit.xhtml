@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditRevisionpuertasTitle}"></h:outputText>
+            <h:outputText value="Editar Revisión de Puertas"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,24 +15,24 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditRevisionpuertasLabel_id}" for="id" />
+                    <h:outputLabel value="ID" for="id" />
                     <h:inputText id="id" value="#{revisionpuertasController.selected.id}" title="#{bundle.EditRevisionpuertasTitle_id}" required="true" requiredMessage="#{bundle.EditRevisionpuertasRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditRevisionpuertasLabel_numpuertas}" for="numpuertas" />
+                    <h:outputLabel value="Número de puertas" for="numpuertas" />
                     <h:inputText id="numpuertas" value="#{revisionpuertasController.selected.numpuertas}" title="#{bundle.EditRevisionpuertasTitle_numpuertas}" />
-                    <h:outputLabel value="#{bundle.EditRevisionpuertasLabel_alineadas}" for="alineadas" />
+                    <h:outputLabel value="Alineadas" for="alineadas" />
                     <h:inputText id="alineadas" value="#{revisionpuertasController.selected.alineadas}" title="#{bundle.EditRevisionpuertasTitle_alineadas}" />
-                    <h:outputLabel value="#{bundle.EditRevisionpuertasLabel_statusrevision}" for="statusrevision" />
+                    <h:outputLabel value="Status" for="statusrevision" />
                     <h:inputText id="statusrevision" value="#{revisionpuertasController.selected.statusrevision}" title="#{bundle.EditRevisionpuertasTitle_statusrevision}" />
                 </h:panelGrid>
-                <h:commandLink action="#{revisionpuertasController.update}" value="#{bundle.EditRevisionpuertasSaveLink}"/>
+                <h:commandLink action="#{revisionpuertasController.update}" value="Salvar"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditRevisionpuertasViewLink}"/>
+                <h:link outcome="View" value="Ver"/>
                 <br />
-                <h:commandLink action="#{revisionpuertasController.prepareList}" value="#{bundle.EditRevisionpuertasShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{revisionpuertasController.prepareList}" value="Lista" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditRevisionpuertasIndexLink}" />
+                <h:link outcome="/index" value="Index" />
             </h:form>
         </ui:define>
     </ui:composition>
