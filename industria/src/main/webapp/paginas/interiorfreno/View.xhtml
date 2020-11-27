@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewInteriorfrenoTitle}"></h:outputText>
+            <h:outputText value="Frenos"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -23,18 +23,16 @@
                     <h:outputText value="#{interiorfrenoController.selected.idInventario}" title="#{bundle.ViewInteriorfrenoTitle_idInventario}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{interiorfrenoController.destroyAndView}" value="#{bundle.ViewInteriorfrenoDestroyLink}"/>
+                <h:commandLink action="#{interiorfrenoController.destroyAndView}" value="Eliminar"/>
                 <br />
                 <br />
                 <h:link outcome="Edit" value="#{bundle.ViewInteriorfrenoEditLink}"/>
                 <br />
-                <h:commandLink action="#{interiorfrenoController.prepareCreate}" value="#{bundle.ViewInteriorfrenoCreateLink}" />
+                <h:commandLink action="#{interiorfrenoController.prepareCreate}" value="Crear" />
                 <br />
-                <h:commandLink action="#{interiorfrenoController.prepareList}" value="#{bundle.ViewInteriorfrenoShowAllLink}"/>
+                <h:commandLink action="#{interiorfrenoController.prepareList}" value="Ver todos "/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewInteriorfrenoIndexLink}"/>
-
             </h:form>
         </ui:define>
     </ui:composition>

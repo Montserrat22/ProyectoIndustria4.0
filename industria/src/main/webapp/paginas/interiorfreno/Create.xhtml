@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateInteriorfrenoTitle}"></h:outputText>
+            <h:outputText value="Interior freno"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,22 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateInteriorfrenoLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{interiorfrenoController.selected.id}" title="#{bundle.CreateInteriorfrenoTitle_id}" required="true" requiredMessage="#{bundle.CreateInteriorfrenoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateInteriorfrenoLabel_statusinterior}" for="statusinterior" />
+                    <h:outputLabel value="Status interior" for="statusinterior" />
                     <h:inputText id="statusinterior" value="#{interiorfrenoController.selected.statusinterior}" title="#{bundle.CreateInteriorfrenoTitle_statusinterior}" />
-                    <h:outputLabel value="#{bundle.CreateInteriorfrenoLabel_idInventario}" for="idInventario" />
+                    <h:outputLabel value="Inventario}" for="idInventario" />
                     <h:selectOneMenu id="idInventario" value="#{interiorfrenoController.selected.idInventario}" title="#{bundle.CreateInteriorfrenoTitle_idInventario}" >
                         <f:selectItems value="#{inventarioController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{interiorfrenoController.create}" value="#{bundle.CreateInteriorfrenoSaveLink}" />
+                <h:commandLink action="#{interiorfrenoController.create}" value="Guardar" class="button btn-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{interiorfrenoController.prepareList}" value="#{bundle.CreateInteriorfrenoShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{interiorfrenoController.prepareList}" value="Ver todos" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateInteriorfrenoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
