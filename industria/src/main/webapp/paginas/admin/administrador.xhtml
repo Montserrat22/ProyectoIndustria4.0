@@ -10,38 +10,32 @@
         <title>Facelet Title</title>
     </h:head>
 
-        
-    <ui:composition template="/template.xhtml">
-           <ui:define name="body">
-              
-         <a href="/industria/faces/paginas/carro/List.xhtml" class="button button5">Mostrar todos los Autos</a>
-
-
-    <h:body>
-        <h:form>
-        <br />
-        <a href="/industria/faces/paginas/inventario/List.xhtml" class="button button5">Mostrar todo el inventario</a>
+        <ui:composition template="/template.xhtml">
+            <ui:define name="body">
+                <h:body>
+                    <h:form>
+                            <br />
+                                <a href="/industria/faces/paginas/inventario/List.xhtml" class="button button5">Mostrar todo el inventario</a>
        
-        <br />
-         <a href="/industria/faces/paginas/pieza/List.xhtml" class="button button5">Mostrar todas las piezas</a>
-        <br />
-         <a href="/industria/faces/paginas/proceso/List.xhtml" class="button button5">Mostrar todos los procesos</a>
+                            <br />
+                             <a href="/industria/faces/paginas/pieza/List.xhtml" class="button button5">Mostrar todas las piezas</a>
+                            <br />
+                            <a href="/industria/faces/paginas/proceso/List.xhtml" class="button button5">Mostrar todos los procesos</a>
      
-        <br />
-         <a href="/industria/faces/paginas/slicitud/List.xhtml" class="button button5">Mostrar todas las solicitudes</a>
-        <br />
+                             <br />
+                            <a href="/industria/faces/paginas/slicitud/List.xhtml" class="button button5">Mostrar todas las solicitudes</a>
+                            <br />
+  
 
-    
-         </ui:define>
-
-    </ui:composition>
-
-        <h:link outcome="/paginas/slicitud/List" value="Show All Slicitud Items"/>
-        <br/>
-        <h:link outcome="/paginas/rol/List" value="Show All Rol Items"/>
-        <br/>
-        <h:commandButton id="bt-reg" value="Register" action="/paginas/usuario/Create" ></h:commandButton>
-        </h:form>
-    </h:body>
+                             <h:link outcome="/paginas/slicitud/List" value="Mostrar todas las solicitudes"/>
+                              <br/>
+                              <h:link outcome="/paginas/rol/List" value="Mostrar todos los roles"/>
+                             <br/>
+                            <h:commandButton id="bt-reg" value="Register" action="/paginas/usuario/Create" ></h:commandButton>
+                    </h:form>                
+                </h:body> 
+            </ui:define>
+        </ui:composition>
+   
 </html>
 
