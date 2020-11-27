@@ -7,14 +7,14 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListInteriorvolanteTitle}"></h:outputText>
+            <h:outputText value="Lista Interior Volante"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListInteriorvolanteEmpty}" rendered="#{interiorvolanteController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="Interior Volante" rendered="#{interiorvolanteController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{interiorvolanteController.items.rowCount > 0}">
                     <h:outputText value="#{interiorvolanteController.pagination.pageFirstItem + 1}..#{interiorvolanteController.pagination.pageLastItem + 1}/#{interiorvolanteController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{interiorvolanteController.previous}" value="#{bundle.Previous} #{interiorvolanteController.pagination.pageSize}" rendered="#{interiorvolanteController.pagination.hasPreviousPage}"/>&nbsp;
@@ -51,10 +51,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{interiorvolanteController.prepareCreate}" value="#{bundle.ListInteriorvolanteCreateLink}"/>
+                <h:commandLink action="#{interiorvolanteController.prepareCreate}" value="Crear"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListInteriorvolanteIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
             </h:form>
         </ui:define>
     </ui:composition>

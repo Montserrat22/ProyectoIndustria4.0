@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewInteriorasientoTitle}"></h:outputText>
+            <h:outputText value="Ver Interior Asiento"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,25 +15,25 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_id}"/>
+                    <h:outputText value="ID"/>
                     <h:outputText value="#{interiorasientoController.selected.id}" title="#{bundle.ViewInteriorasientoTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_statusinterior}"/>
+                    <h:outputText value="Status"/>
                     <h:outputText value="#{interiorasientoController.selected.statusinterior}" title="#{bundle.ViewInteriorasientoTitle_statusinterior}"/>
-                    <h:outputText value="#{bundle.ViewInteriorasientoLabel_idInventario}"/>
+                    <h:outputText value="ID Inventario"/>
                     <h:outputText value="#{interiorasientoController.selected.idInventario}" title="#{bundle.ViewInteriorasientoTitle_idInventario}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{interiorasientoController.destroyAndView}" value="#{bundle.ViewInteriorasientoDestroyLink}"/>
+                <h:commandLink action="#{interiorasientoController.destroyAndView}" value="Eliminar"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewInteriorasientoEditLink}"/>
+                <h:link outcome="Edit" value="Editar"/>
                 <br />
-                <h:commandLink action="#{interiorasientoController.prepareCreate}" value="#{bundle.ViewInteriorasientoCreateLink}" />
+                <h:commandLink action="#{interiorasientoController.prepareCreate}" value="Crear" />
                 <br />
-                <h:commandLink action="#{interiorasientoController.prepareList}" value="#{bundle.ViewInteriorasientoShowAllLink}"/>
+                <h:commandLink action="#{interiorasientoController.prepareList}" value="Lista"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewInteriorasientoIndexLink}"/>
+                <h:link outcome="/index" value="Index"/>
 
             </h:form>
         </ui:define>
