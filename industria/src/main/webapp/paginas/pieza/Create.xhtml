@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreatePiezaTitle}"></h:outputText>
+            <h:outputText value="Crear pieza"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,27 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_id}" for="id" />
+                    <h:outputLabel value="Id" for="id" />
                     <h:inputText id="id" value="#{piezaController.selected.id}" title="#{bundle.CreatePiezaTitle_id}" required="true" requiredMessage="#{bundle.CreatePiezaRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_idProveedor}" for="idProveedor" />
+                    <h:outputLabel value="Proveedoor" for="idProveedor" />
                     <h:inputText id="idProveedor" value="#{piezaController.selected.idProveedor}" title="#{bundle.CreatePiezaTitle_idProveedor}" />
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_nombre}" for="nombre" />
+                    <h:outputLabel value="Nombre de la pieza" for="nombre" />
                     <h:inputText id="nombre" value="#{piezaController.selected.nombre}" title="#{bundle.CreatePiezaTitle_nombre}" />
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_descripcion}" for="descripcion" />
+                    <h:outputLabel value="Descripcion de la pieza" for="descripcion" />
                     <h:inputText id="descripcion" value="#{piezaController.selected.descripcion}" title="#{bundle.CreatePiezaTitle_descripcion}" />
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_preciou}" for="preciou" />
+                    <h:outputLabel value="Precio" for="preciou" />
                     <h:inputText id="preciou" value="#{piezaController.selected.preciou}" title="#{bundle.CreatePiezaTitle_preciou}" />
-                    <h:outputLabel value="#{bundle.CreatePiezaLabel_status}" for="status" />
+                    <h:outputLabel value="Status" for="status" />
                     <h:inputText id="status" value="#{piezaController.selected.status}" title="#{bundle.CreatePiezaTitle_status}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{piezaController.create}" value="#{bundle.CreatePiezaSaveLink}" />
+                <h:commandLink action="#{piezaController.create}" value="Guardar" class="button bg-success" />
                 <br />
                 <br />
-                <h:commandLink action="#{piezaController.prepareList}" value="#{bundle.CreatePiezaShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{piezaController.prepareList}" value="Ver todas las piezas" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreatePiezaIndexLink}"/>
+                <h:link outcome="/paginas/admin/administrador.xhtml" value="Regresar"/>
             </h:form>
         </ui:define>
     </ui:composition>

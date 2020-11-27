@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListPiezaTitle}"></h:outputText>
+            <h:outputText value="Piezas"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
@@ -69,10 +69,10 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{piezaController.prepareCreate}" value="#{bundle.ListPiezaCreateLink}"/>
+                <h:commandLink action="#{piezaController.prepareCreate}" value="Crear pieza"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListPiezaIndexLink}"/>
+                <h:link outcome="/paginas/admin/administrador.xhtml" value="Regresar"/>
             </h:form>
         </ui:define>
     </ui:composition>
